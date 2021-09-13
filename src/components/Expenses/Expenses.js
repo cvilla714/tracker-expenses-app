@@ -66,6 +66,16 @@ const Expenses = () => {
         />
         <BarChart filterYear={filterYear} />
         {expensesContent}
+        <ReactPaginate
+          previousLabel="Previous"
+          nextLabel="Next"
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName="paginationBttns"
+          previousLinkClassName="previousBttn"
+          nextLinkClassName="nextBttn"
+          activeClassName="paginationActive"
+        />
       </Card>
     </div>
   );
