@@ -8,4 +8,8 @@ const Card = ({ className, children }) => {
   return <div className={classes}>{children}</div>;
 };
 
+Card.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(Array).isRequired,
+};
 export default Card;
