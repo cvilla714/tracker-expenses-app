@@ -131,4 +131,10 @@ const ExpenseItem = ({ date, title, amount, id }) => {
   );
 };
 
+ExpenseItem.propTypes = {
+  date: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+};
 export default ExpenseItem;
