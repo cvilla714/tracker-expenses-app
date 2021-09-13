@@ -85,4 +85,7 @@ const ExpenseForm = ({ onCancel }) => {
   );
 };
 
+ExpenseForm.propTypes = {
+  onCancel: PropTypes.func.isRequired,
+};
 export default ExpenseForm;
