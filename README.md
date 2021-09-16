@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://vibrant-heyrovsky-039c58.netlify.app/)
+[Live Demo Link](https://upbeat-montalcini-94dc0b.netlify.app)
 
 ## Getting Started
 
