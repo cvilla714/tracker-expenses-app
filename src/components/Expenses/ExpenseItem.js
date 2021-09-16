@@ -12,7 +12,9 @@ import {
   useDeleteExpenseMutation,
 } from '../../features/user/statusSlice';
 
-const ExpenseItem = ({ date, title, amount, id }) => {
+const ExpenseItem = ({
+  date, title, amount, id,
+}) => {
   const { form, handleChange, clearForm } = useForm({
     title: '',
     amount: '',

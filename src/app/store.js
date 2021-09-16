@@ -6,8 +6,7 @@ const store = configureStore({
   reducer: {
     [checkLoginStatusapi.reducerPath]: checkLoginStatusapi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(checkLoginStatusapi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(checkLoginStatusapi.middleware),
 });
 
 export default store;

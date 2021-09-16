@@ -25,9 +25,8 @@ const Expenses = () => {
     : [];
 
   const filterExpensesByUserId = filterByUserid.filter(
-    (month) =>
-      new Date(month.date).toLocaleString('en-US', { year: 'numeric' }) ===
-      filterYear,
+    (month) => new Date(month.date).toLocaleString('en-US', { year: 'numeric' })
+      === filterYear,
   );
 
   const [pageNumber, setPageNumber] = useState(0);
