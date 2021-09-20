@@ -18,11 +18,11 @@ const App = () => {
         <NavigationBar />
         <Switch>
           {isAuth ? (
-            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
           ) : (
             <Route exact path="/login" component={Login} />
           )}
-          <Route exact path="/tracker" component={TrackerExpense} />
+          <Route exact path="/" component={TrackerExpense} />
           <Route exact path="/register" component={Registration} />
           <Route exact path="/login" component={Login} />
         </Switch>
