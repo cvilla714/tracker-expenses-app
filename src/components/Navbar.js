@@ -41,13 +41,16 @@ const NavigationBar = () => {
       <Link to="/login" className="text-light">
         Login
       </Link>
+      {/* <Link to="/tracker" className="text-light mx-2">
+        Expenses Tracker
+      </Link> */}
     </Nav>
   );
 
   return (
     <div>
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="#home">Expenses Tracker</Navbar.Brand>
+        <Navbar.Brand href="/tracker">Expenses Tracker</Navbar.Brand>
         <Nav className="mr-auto">{loggedIn ? authLinks : guessLinks}</Nav>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
