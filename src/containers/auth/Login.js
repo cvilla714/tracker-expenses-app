@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import useRedirect from '../../components/Hooks/useRedirect';
 import useForm from '../../components/Hooks/useForm';
 import { useUserSessionMutation } from '../../features/user/statusSlice';
+import './Login.css';
 
 const Login = () => {
   const { form, handleChange, clearForm } = useForm({
@@ -26,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-custom">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -50,8 +51,9 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button type="submit">Login</Button>
-        {' '}
+        <Button className="mt-5" type="submit">
+          Login
+        </Button>
       </Form>
     </div>
   );
