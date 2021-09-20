@@ -13,7 +13,7 @@ const NavigationBar = () => {
   const [logoutUser] = useLogoutUserMutation();
 
   const loggedIn = !!data?.logged_in;
-  const isLoggedIn = data?.logged_in ? '/' : '/login';
+  const isLoggedIn = data?.logged_in ? '/home' : '/login';
 
   const authLinks = (
     <Nav className="mr-auto">
@@ -50,7 +50,7 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/tracker">Expenses Tracker</Navbar.Brand>
+        <Navbar.Brand href="/">Expenses Tracker</Navbar.Brand>
         <Nav className="mr-auto">{loggedIn ? authLinks : guessLinks}</Nav>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
