@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useRegisterUserMutation } from '../../features/user/statusSlice';
 import useForm from '../../components/Hooks/useForm';
+import './Registration.css';
 
 const Registration = () => {
   const { form, handleChange, clearForm } = useForm({
@@ -31,7 +32,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-custom">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicName">
           <Form.Label>Name</Form.Label>
@@ -78,7 +79,9 @@ const Registration = () => {
             required
           />
         </Form.Group>
-        <Button type="submit">Register</Button>
+        <Button className="mt-5" type="submit">
+          Register
+        </Button>
       </Form>
     </div>
   );
