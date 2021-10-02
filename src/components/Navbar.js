@@ -17,11 +17,13 @@ const NavigationBar = () => {
 
   const authLinks = (
     <Nav className="mr-auto">
-      <Link to={isLoggedIn} className="text-light">
+      <Link to="/" className="text-light mx-2 logo">
+        Expenses Tracker
+      </Link>
+      <Link to={isLoggedIn} className="text-light mt-2">
         Home
       </Link>
-      <li>
-        a
+      <li className="logo-link">
         <a href="?" className="text-light mx-2" onClick={() => logoutUser()}>
           {' '}
           Logout
@@ -32,25 +34,24 @@ const NavigationBar = () => {
 
   const guessLinks = (
     <Nav className="mr-auto">
-      <Link to={isLoggedIn} className="text-light">
+      <Link to="/" className="text-light mx-2 logo">
+        Expenses Tracker
+      </Link>
+      <Link to={isLoggedIn} className="text-light mt-2">
         Home
       </Link>
-      <Link to="/register" className="text-white mx-2">
+      <Link to="/register" className="text-white mx-2 mt-2 ">
         Register
       </Link>
-      <Link to="/login" className="text-light">
+      <Link to="/login" className="text-light mt-2">
         Login
       </Link>
-      {/* <Link to="/tracker" className="text-light mx-2">
-        Expenses Tracker
-      </Link> */}
     </Nav>
   );
 
   return (
     <div>
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">Expenses Tracker</Navbar.Brand>
         <Nav className="mr-auto">{loggedIn ? authLinks : guessLinks}</Nav>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
