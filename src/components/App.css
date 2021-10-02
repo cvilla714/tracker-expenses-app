@@ -5,3 +5,12 @@
 canvas {
   background-color: antiquewhite;
 }
+
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.logo-link {
+  margin-top: 0.5rem !important;
+}
