@@ -7,6 +7,7 @@ import TrackerExpense from './Tracker';
 
 import Registration from '../containers/auth/Registration';
 import Login from '../containers/auth/Login';
+import Alert from '../containers/auth/Alert';
 import { useGetLoginUserInfoQuery } from '../features/user/statusSlice';
 
 const App = () => {
@@ -20,7 +21,10 @@ const App = () => {
           {isAuth ? (
             <Route exact path="/home" component={Home} />
           ) : (
-            <Route exact path="/login" component={Login} />
+            <>
+              <Alert />
+              <Route exact path="/login" component={Login} />
+            </>
           )}
           <Route exact path="/" component={TrackerExpense} />
           <Route exact path="/register" component={Registration} />
