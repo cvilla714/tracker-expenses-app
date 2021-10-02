@@ -1,9 +1,14 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import useRedirect from '../../components/Hooks/useRedirect';
 import useForm from '../../components/Hooks/useForm';
-import { useUserSessionMutation } from '../../features/user/statusSlice';
+import {
+  useUserSessionMutation,
+  // useGetLoginUserInfoQuery,
+} from '../../features/user/statusSlice';
 import './Login.css';
+// import Alert from './Alert';
 
 const Login = () => {
   const { form, handleChange, clearForm } = useForm({
@@ -12,6 +17,10 @@ const Login = () => {
   });
   const { redirect } = useRedirect();
   const [userSession] = useUserSessionMutation();
+  // const { data } = useGetLoginUserInfoQuery();
+
+  // const notLoggedIn = data?.logged_in;
+  // console.log(notLoggedIn);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +31,7 @@ const Login = () => {
       },
     };
     userSession(userData);
-    redirect('/');
+    redirect('/home');
     clearForm();
   };
 
