@@ -27,7 +27,7 @@ const Registration = () => {
       },
     };
     registerUser(useDataRegistration);
-    history.push('/');
+    history.push('/home');
     clearForm();
   };
 
