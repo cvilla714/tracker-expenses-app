@@ -33,7 +33,6 @@ export const checkLoginStatusapi = createApi({
       query: () => 'logged_in',
       providesTags: ['Session'],
     }),
-
     logoutUser: builder.mutation({
       query() {
         return {
