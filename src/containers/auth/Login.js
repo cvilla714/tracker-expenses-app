@@ -8,6 +8,7 @@ import {
 } from '../../features/user/statusSlice';
 import './Login.css';
 import Alert from './Alert';
+import SuccessAlert from './AlertSuccessfull';
 import Home from '../../components/Expenses/Home';
 
 const Login = () => {
@@ -38,7 +39,10 @@ const Login = () => {
       ) : isLoading ? (
         <>Loading...</>
       ) : data.logged_in ? (
-        <Home />
+        <>
+          <SuccessAlert />
+          <Home />
+        </>
       ) : (
         <>
           <Alert />
