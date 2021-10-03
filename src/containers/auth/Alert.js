@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { Alert, Button } from 'react-bootstrap';
 
-const Alert = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {}, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+const AlertError = () => {
+  const [show, setShow] = useState(true);
 
-  return (
-    <div className="alert alert-warning" role="alert">
-      You need to log in to get access to the app
-    </div>
-  );
+  if (show) {
+    return (
+      <Alert variant="warning" onClose={() => setShow(false)} dismissible>
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+        <p>Please provide the correct email and password to get access</p>
+      </Alert>
+    );
+  }
+  return <Button onClick={() => setShow(true)}>Show me the error</Button>;
 };
-
-export default Alert;
+export default AlertError;
