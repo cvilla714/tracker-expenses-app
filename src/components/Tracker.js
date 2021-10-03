@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaHome } from 'react-icons/fa';
 import { Container, Row } from 'react-bootstrap';
 import img1 from '../images/main_image.png';
 import img2 from '../images/expenses2.png';
@@ -12,7 +11,7 @@ const Tracker = () => (
           href="?"
           className="d-flex align-items-center text-dark text-decoration-none"
         >
-          <FaHome />
+          <i className="fas fa-home" />
           <title>Bootstrap</title>
 
           <span className="mx-2 text-success">Tracking Your Expenses</span>
