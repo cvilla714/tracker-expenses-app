@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Expenseitem.css';
 import { Button, Modal, Form } from 'react-bootstrap';
-import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Card from '../Ui/Card';
 import ExpenseDate from './ExpenseDate';
@@ -121,10 +120,10 @@ const ExpenseItem = ({
             <h2>{title}</h2>
             <div className="expense-item__price">{amount}</div>
             <Button id={id} variant="primary" onClick={handleShow}>
-              <FaEdit />
+              <i className="fas fa-edit" />
             </Button>
             <Button id={id} variant="primary" onClick={handleDelete}>
-              <FaTrashAlt />
+              <i className="fas fa-trash" />
             </Button>
           </div>
         </Card>
