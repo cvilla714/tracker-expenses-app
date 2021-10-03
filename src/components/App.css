@@ -14,3 +14,7 @@ canvas {
 .logo-link {
   margin-top: 0.5rem !important;
 }
+
+.exit {
+  display: none !important;
+}
