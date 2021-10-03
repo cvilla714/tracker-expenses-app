@@ -5,10 +5,10 @@ import useRedirect from '../../components/Hooks/useRedirect';
 import useForm from '../../components/Hooks/useForm';
 import {
   useUserSessionMutation,
-  // useGetLoginUserInfoQuery,
+  useGetLoginUserInfoQuery,
 } from '../../features/user/statusSlice';
 import './Login.css';
-// import Alert from './Alert';
+import Alert from './Alert';
 
 const Login = () => {
   const { form, handleChange, clearForm } = useForm({
@@ -17,10 +17,7 @@ const Login = () => {
   });
   const { redirect } = useRedirect();
   const [userSession] = useUserSessionMutation();
-  // const { data } = useGetLoginUserInfoQuery();
-
-  // const notLoggedIn = data?.logged_in;
-  // console.log(notLoggedIn);
+  const { data, error, isLoading } = useGetLoginUserInfoQuery();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,7 +34,73 @@ const Login = () => {
 
   return (
     <div className="container mt-custom">
-      <Form onSubmit={handleSubmit}>
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data.sessions ? (
+        <>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Button className="mt-5" type="submit">
+              Login
+            </Button>
+          </Form>
+        </>
+      ) : (
+        <>
+          <Alert />
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Button className="mt-5" type="submit">
+              Login
+            </Button>
+          </Form>
+        </>
+      )}
+      {/* <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -63,7 +126,7 @@ const Login = () => {
         <Button className="mt-5" type="submit">
           Login
         </Button>
-      </Form>
+      </Form> */}
     </div>
   );
 };
