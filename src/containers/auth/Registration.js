@@ -4,11 +4,11 @@ import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import {
   useRegisterUserMutation,
-  // useGetLoginUserInfoQuery,
+  useGetLoginUserInfoQuery,
 } from '../../features/user/statusSlice';
 import useForm from '../../components/Hooks/useForm';
-// import Home from '../../components/Expenses/Home';
-// import SuccessRegistration from './AlertRegistrationInfo';
+import Home from '../../components/Expenses/Home';
+import SuccessRegistration from './AlertRegistrationInfo';
 import RegistgrationAlert from './AlertRegistration';
 import './Registration.css';
 
@@ -22,7 +22,7 @@ const Registration = () => {
 
   const history = useHistory();
   const [registerUser] = useRegisterUserMutation();
-  // const { data, error, isLoading } = useGetLoginUserInfoQuery();
+  const { data, error, isLoading } = useGetLoginUserInfoQuery();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +41,7 @@ const Registration = () => {
 
   return (
     <div className="container mt-custom">
-      <>
+      {/* <>
         <RegistgrationAlert />
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicName">
@@ -93,8 +93,8 @@ const Registration = () => {
             Register
           </Button>
         </Form>
-      </>
-      {/* {error ? (
+      </> */}
+      {error ? (
         <>Oh no, there was an error</>
       ) : isLoading ? (
         <>Loading...</>
@@ -157,7 +157,7 @@ const Registration = () => {
             </Button>
           </Form>
         </>
-      )} */}
+      )}
     </div>
   );
 };
