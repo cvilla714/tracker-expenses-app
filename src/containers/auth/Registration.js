@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import {
   useRegisterUserMutation,
   useGetLoginUserInfoQuery,
@@ -20,7 +20,7 @@ const Registration = () => {
     password_confirmation: '',
   });
 
-  const history = useHistory();
+  // const history = useHistory();
   const [registerUser] = useRegisterUserMutation();
   const { data, error, isLoading } = useGetLoginUserInfoQuery();
 
@@ -35,7 +35,7 @@ const Registration = () => {
       },
     };
     registerUser(useDataRegistration);
-    history.push('/home');
+    // history.push('/home');
     clearForm();
   };
 
