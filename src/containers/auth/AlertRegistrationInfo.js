@@ -6,7 +6,7 @@ const AlertRegistrationInfo = () => {
 
   if (show) {
     return (
-      <Alert variant="warning" onClose={() => setShow(false)} dismissible>
+      <Alert variant="success" onClose={() => setShow(false)} dismissible>
         <Alert.Heading>Welcome!</Alert.Heading>
         <p>You have registered successfully</p>
       </Alert>
